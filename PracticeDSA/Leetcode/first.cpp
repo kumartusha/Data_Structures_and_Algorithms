@@ -1,4 +1,4 @@
-// Leetcode 16th December 
+// Leetcode 16th December
 // class Solution {
 // public:
 
@@ -31,3 +31,42 @@
 //         return nums;
 //     }
 // };
+
+// Leetcode Questions..
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+
+    // Input:prices = [ 8, 4, 6, 2, 3 ]
+    // Output : [ 4, 2, 4, 2, 3 ]
+
+    // vector<int> prices = {10,1,1,6};
+    vector<int> prices = {8,4,6,2,3};
+    vector<int> answer(prices.size());
+
+    int size = prices.size();
+    //  Logic for the Problem..
+    for (int i = 0; i < size; ++i)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j <= size; ++j)
+        {
+            if (j < size && prices[minIndex] >= prices[j])
+            {
+                answer[minIndex] = prices[minIndex] - prices[j];
+                break;
+            }else{
+                answer[minIndex] = prices[minIndex];
+            }
+        }
+    }
+    
+    for (auto element : answer)
+    {
+        cout << element << " ";
+    }
+}
