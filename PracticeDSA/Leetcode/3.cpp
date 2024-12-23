@@ -20,3 +20,19 @@
 // }
 
 // Revision  
+
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+// using namespace std;
+
+// int main(){
+//     vector<int> vect = {54,56,567,445,54455,6555,454,34};
+//     // sort(vect.begin(), vect.end());
+    
+//     sort(vect.begin(), vect.end(), greater<int>());
+//     for(auto element: vect){
+//           cout<<element<<" ";
+//     }
+
+// }
