@@ -111,108 +111,141 @@ using namespace std;
 // }
 // }
 
-class Node
-{
-public:
-    int data;
-    Node *next;
-    Node(int data)
-    {
-        this->data = data;
-        this->next = nullptr;
-    }
-};
+// class Node
+// {
+// public:
+//     int data;
+//     Node *next;
+//     Node(int data)
+//     {
+//         this->data = data;
+//         this->next = nullptr;
+//     }
+// };
 
-Node *reversed(Node *&head)
-{
-    //  so here we need to write the logic for reverse the ll.
-    Node *prev = nullptr;
-    Node *curr = head;
-    Node *next = nullptr;
+// Node *reversed(Node *&head)
+// {
+//     //  so here we need to write the logic for reverse the ll.
+//     Node *prev = nullptr;
+//     Node *curr = head;
+//     Node *next = nullptr;
 
-    while (curr)
-    {
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
+//     while (curr)
+//     {
+//         next = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = next;
+//     }
+//     return prev;
+// }
+// Node *insertatend(int number, Node *&head, Node *&tail)
+// {
+//     //  it will take a number and return the linked list node..
+//     Node *newNode = new Node(number);
+//     if (head == nullptr && tail == nullptr)
+//     {
+//         //    if head and tail are nullptr means that they are in nullptr situation.
+//         head = newNode;
+//         tail = newNode;
+//     }
+//     else
+//     {
+//         //     if the linkedlist is not nullptr means that we need to add into the last.
+//         head->next = newNode;
+//         tail = newNode;
+//     }
+//     return head;
+// }
+
+// Node *addTwoNumbers(Node *num1, Node *num2)
+// {
+//     //  Edge Cases.
+//     if (num1 == nullptr && num2 != nullptr)
+//     {
+//         return num2;
+//     }
+//     if (num1 != nullptr && num2 == nullptr)
+//     {
+//         return num1;
+//     }
+//     //   first reverse the linked list..
+//     num1 = reversed(num1);
+//     num2 = reversed(num2);
+
+//     //   here we have the reversed linked list now we nee to perform summation.
+//     int carry = 0;
+//     Node *temp1 = num1;
+//     Node *temp2 = num2;
+//     Node *head = nullptr;
+//     Node *tail = nullptr;
+
+//     while (temp1 != nullptr && temp2 != nullptr)
+//     {
+//         int sum = temp1->data + temp2->data + carry;
+//         int node = sum % 10;
+//         carry = sum / 10;
+//         head = insertatend(node, head, tail);
+
+//         temp1 = temp1->next;
+//         temp2 = temp2->next;
+//     }
+
+//     //  if the temp1 is having some element.
+//     while (temp1 != nullptr)
+//     {
+//         int sum = temp1->data + carry;
+//         int node = sum % 10;
+//         carry = sum / 10;
+//         head = insertatend(node, head, tail);
+
+//         temp1 = temp1->next;
+//     }
+//     while (temp2 != nullptr)
+//     {
+//         int sum = temp2->data + carry;
+//         int node = sum % 10;
+//         carry = sum / 10;
+//         head = insertatend(node, head, tail);
+
+//         temp2 = temp2->next;
+//     }
+//     if (carry != 0)
+//     {
+//         head = insertatend(carry, head, tail);
+//     }
+//     return reversed(head);
+// }
+
+// int main()
+// {
+
+//     //     Input: nums = [1,1,1,1,1], target = 3
+//     // Output: 5
+//     // Explanation: There are 5 ways to assign symbols to make the sum of nums be target 3.
+//     // -1 + 1 + 1 + 1 + 1 = 3
+//     // +1 - 1 + 1 + 1 + 1 = 3
+//     // +1 + 1 - 1 + 1 + 1 = 3
+//     // +1 + 1 + 1 - 1 + 1 = 3
+//     // +1 + 1 + 1 + 1 - 1 = 3
+// }
+
+auto binarySearch(vector<int> nums, int target)
+{
+    return binary_search(nums.begin(), nums.end(), target);
 }
-Node *insertatend(int number, Node *&head, Node *&tail)
+// Function to search a given number in row-column sorted matrix.
+int main()
 {
-    //  it will take a number and return the linked list node..
-    Node *newNode = new Node(number);
-    if (head == nullptr && tail == nullptr)
+    vector<vector<int>> mat = {{3, 4, 9}, {2, 5, 6}, {9, 25, 27}};
+    int target = 9;
+    bool isTrue = false;
+    for (auto elements : mat)
     {
-        //    if head and tail are nullptr means that they are in nullptr situation.
-        head = newNode;
-        tail = newNode;
+        if (binarySearch(elements, target))
+        {
+            cout << "Found";
+        }
     }
-    else
-    {
-        //     if the linkedlist is not nullptr means that we need to add into the last.
-        head->next = newNode;
-        tail = newNode;
-    }
-    return head;
-}
-
-Node *addTwoNumbers(Node *num1, Node *num2)
-{
-    //  Edge Cases.
-    if (num1 == nullptr && num2 != nullptr)
-    {
-        return num2;
-    }
-    if (num1 != nullptr && num2 == nullptr)
-    {
-        return num1;
-    }
-    //   first reverse the linked list..
-    num1 = reversed(num1);
-    num2 = reversed(num2);
-
-    //   here we have the reversed linked list now we nee to perform summation.
-    int carry = 0;
-    Node *temp1 = num1;
-    Node *temp2 = num2;
-    Node *head = nullptr;
-    Node *tail = nullptr;
-
-    while (temp1 != nullptr && temp2 != nullptr)
-    {
-        int sum = temp1->data + temp2->data + carry;
-        int node = sum % 10;
-        carry = sum / 10;
-        head = insertatend(node, head, tail);
-
-        temp1 = temp1->next;
-        temp2 = temp2->next;
-    }
-
-    //  if the temp1 is having some element.
-    while (temp1 != nullptr)
-    {
-        int sum = temp1->data + carry;
-        int node = sum % 10;
-        carry = sum / 10;
-        head = insertatend(node, head, tail);
-
-        temp1 = temp1->next;
-    }
-    while (temp2 != nullptr)
-    {
-        int sum = temp2->data + carry;
-        int node = sum % 10;
-        carry = sum / 10;
-        head = insertatend(node, head, tail);
-
-        temp2 = temp2->next;
-    }
-    if (carry != 0)
-    {
-        head = insertatend(carry, head, tail);
-    }
-    return reversed(head);
+    cout << isTrue;
 }
