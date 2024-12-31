@@ -230,22 +230,53 @@ using namespace std;
 //     // +1 + 1 + 1 + 1 - 1 = 3
 // }
 
-auto binarySearch(vector<int> nums, int target)
-{
-    return binary_search(nums.begin(), nums.end(), target);
-}
-// Function to search a given number in row-column sorted matrix.
+// auto binarySearch(vector<int> nums, int target)
+// {
+//     return binary_search(nums.begin(), nums.end(), target);
+// }
+// // Function to search a given number in row-column sorted matrix.
+// int main()
+// {
+//     vector<vector<int>> mat = {{3, 4, 9}, {2, 5, 6}, {9, 25, 27}};
+//     int target = 9;
+//     bool isTrue = false;
+//     for (auto elements : mat)
+//     {
+//         if (binarySearch(elements, target))
+//         {
+//             cout << "Found";
+//         }
+//     }
+//     cout << isTrue;
+// }
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
+
 int main()
 {
-    vector<vector<int>> mat = {{3, 4, 9}, {2, 5, 6}, {9, 25, 27}};
-    int target = 9;
-    bool isTrue = false;
-    for (auto elements : mat)
+
+    vector<int> arr = {53, 57, 77, 15, 78, 58, 17, 63, 90, 73, 68, 82, 40, 68, 22, 52, 81, 92, 80, 37, 62, 17, 76, 67, 55, 56, 20, 22, 37, 71, 65, 7, 30, 93, 1, 1, 90, 46, 36, 74, 0, 37, 76, 69, 39, 97, 39, 30, 14, 89, 74, 71, 27, 79, 51, 45, 51, 54, 90, 35, 68, 38, 7, 82, 55, 65, 14, 40, 20, 64, 89, 95, 8, 43, 14, 88, 5, 24, 72, 9, 56, 17, 60, 91, 16, 94, 47, 15, 33};
+    sort(arr.begin(), arr.end());
+
+    //   Find the maximum longest consecutive sequence..
+    int count = 1;
+    int maxCount = INT_MIN;
+    int size = arr.size();
+    for (int i = 1; i < size; ++i)
     {
-        if (binarySearch(elements, target))
+        if (arr[i] == arr[i - 1] + 1)
         {
-            cout << "Found";
+            ++count;
+        }
+        else
+        {
+            maxCount = max(maxCount, count);
+            count = 1;
         }
     }
-    cout << isTrue;
+
+    cout << maxCount;
 }
