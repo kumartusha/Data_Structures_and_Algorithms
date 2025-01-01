@@ -85,7 +85,7 @@ using namespace std;
 //     cout << element << " ";
 // }
 
-// Sample Input 1 : 2 Sample Output 1 : 1 2 5 6 3 4 Sample Input 2 : 4 Sample Output 2 : 1 2 3 4 17 18 19 20 5 6 7 14 15 16 8 9 12 13 10 11
+// Sample arr 1 : 2 Sample Output 1 : 1 2 5 6 3 4 Sample arr 2 : 4 Sample Output 2 : 1 2 3 4 17 18 19 20 5 6 7 14 15 16 8 9 12 13 10 11
 
 // int number = 4;
 // int row = 4;
@@ -220,7 +220,7 @@ using namespace std;
 // int main()
 // {
 
-//     //     Input: nums = [1,1,1,1,1], target = 3
+//     //     arr: nums = [1,1,1,1,1], target = 3
 //     // Output: 5
 //     // Explanation: There are 5 ways to assign symbols to make the sum of nums be target 3.
 //     // -1 + 1 + 1 + 1 + 1 = 3
@@ -250,33 +250,136 @@ using namespace std;
 //     cout << isTrue;
 // }
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <climits>
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+// #include <climits>
 
+// int main()
+// {
+
+//     vector<int> arr = {53, 57, 77, 15, 78, 58, 17, 63, 90, 73, 68, 82, 40, 68, 22, 52, 81, 92, 80, 37, 62, 17, 76, 67, 55, 56, 20, 22, 37, 71, 65, 7, 30, 93, 1, 1, 90, 46, 36, 74, 0, 37, 76, 69, 39, 97, 39, 30, 14, 89, 74, 71, 27, 79, 51, 45, 51, 54, 90, 35, 68, 38, 7, 82, 55, 65, 14, 40, 20, 64, 89, 95, 8, 43, 14, 88, 5, 24, 72, 9, 56, 17, 60, 91, 16, 94, 47, 15, 33};
+//     sort(arr.begin(), arr.end());
+
+//     //   Find the maximum longest consecutive sequence..
+//     int count = 1;
+//     int maxCount = INT_MIN;
+//     int size = arr.size();
+//     for (int i = 1; i < size; ++i)
+//     {
+//         if (arr[i] == arr[i - 1] + 1)
+//         {
+//             ++count;
+//         }
+//         else
+//         {
+//             maxCount = max(maxCount, count);
+//             count = 1;
+//         }
+//     }
+
+//     cout << maxCount;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {3, -2, 5};
+//     int k = 3;
+//     // we need to find the sum of all the subarray.
+//     int size = arr.size();
+//     vector<int> sumArr;
+
+//     for (int i = 0; i < size; ++i)
+//     {
+//         int sum = 0;
+//         for (int j = i; j < size; ++j)
+//         {
+//             sum += arr[j];
+//             sumArr.push_back(sum);
+//         }
+//     }
+//     sort(sumArr.begin(), sumArr.end(), greater<int>());
+//     cout << sumArr[k - 1];
+// }
+
+#include <unordered_map>
+#include <map>
 int main()
 {
+    vector<string> arr = {"listen", "silent", "enlist", "abc", "cab", "bac", "rat", "tar", "art"};
+    // int size = arr.size();
 
-    vector<int> arr = {53, 57, 77, 15, 78, 58, 17, 63, 90, 73, 68, 82, 40, 68, 22, 52, 81, 92, 80, 37, 62, 17, 76, 67, 55, 56, 20, 22, 37, 71, 65, 7, 30, 93, 1, 1, 90, 46, 36, 74, 0, 37, 76, 69, 39, 97, 39, 30, 14, 89, 74, 71, 27, 79, 51, 45, 51, 54, 90, 35, 68, 38, 7, 82, 55, 65, 14, 40, 20, 64, 89, 95, 8, 43, 14, 88, 5, 24, 72, 9, 56, 17, 60, 91, 16, 94, 47, 15, 33};
-    sort(arr.begin(), arr.end());
+    // vector<string> temp;
+    // vector<vector<string>> output;
+    // unordered_map<string, bool> myHash;
 
-    //   Find the maximum longest consecutive sequence..
-    int count = 1;
-    int maxCount = INT_MIN;
+    // for (auto element : arr)
+    // {
+    //     sort(element.begin(), element.end());
+    //     myHash[element] = false;
+    // }
+
+    // for (int i = 0; i < size; ++i)
+    // {
+    //     string first = arr[i];
+    //     sort(first.begin(), first.end());
+
+    //     // cout << first << " ";
+    //     if (!myHash[first])
+    //     {
+    //         temp.push_back(arr[i]);
+
+    //         for (int j = i + 1; j < size; ++j)
+    //         {
+    //             string second = arr[j];
+    //             sort(second.begin(), second.end());
+
+    //             if (first == second)
+    //             {
+    //                 temp.push_back(arr[j]);
+    //             }
+    //         }
+    //         myHash[first] = true;
+    //         output.push_back(temp);
+    //         temp.clear();
+    //     }
+    // }
+
+    // for (auto elements : output)
+    // {
+    //     for (auto element : elements)
+    //     {
+    //         cout << element << " ";
+    //     }
+    //     cout << endl;
+    // }
     int size = arr.size();
-    for (int i = 1; i < size; ++i)
+
+    // Hash map to store groups of anagrams
+    unordered_map<string, vector<string>> anagramGroups;
+
+    // Group strings by their sorted version
+    for (auto &str : arr)
     {
-        if (arr[i] == arr[i - 1] + 1)
-        {
-            ++count;
-        }
-        else
-        {
-            maxCount = max(maxCount, count);
-            count = 1;
-        }
+        string sortedStr = str;
+        sort(sortedStr.begin(), sortedStr.end()); // Sort the string
+        anagramGroups[sortedStr].push_back(str);  // Group by sorted version
     }
 
-    cout << maxCount;
+    // Extract the grouped anagrams
+    vector<vector<string>> output;
+    for (auto &group : anagramGroups)
+    {
+        output.push_back(group.second);
+    }
+    for (auto &group : output)
+    {
+        for (auto &word : group)
+        {
+            cout << word << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
