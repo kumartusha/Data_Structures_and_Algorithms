@@ -302,84 +302,89 @@ using namespace std;
 //     cout << sumArr[k - 1];
 // }
 
-#include <unordered_map>
-#include <map>
+// #include <unordered_map>
+// #include <map>
+// int main()
+// {
+//     vector<string> arr = {"listen", "silent", "enlist", "abc", "cab", "bac", "rat", "tar", "art"};
+// int size = arr.size();
+
+// vector<string> temp;
+// vector<vector<string>> output;
+// unordered_map<string, bool> myHash;
+
+// for (auto element : arr)
+// {
+//     sort(element.begin(), element.end());
+//     myHash[element] = false;
+// }
+
+// for (int i = 0; i < size; ++i)
+// {
+//     string first = arr[i];
+//     sort(first.begin(), first.end());
+
+//     // cout << first << " ";
+//     if (!myHash[first])
+//     {
+//         temp.push_back(arr[i]);
+
+//         for (int j = i + 1; j < size; ++j)
+//         {
+//             string second = arr[j];
+//             sort(second.begin(), second.end());
+
+//             if (first == second)
+//             {
+//                 temp.push_back(arr[j]);
+//             }
+//         }
+//         myHash[first] = true;
+//         output.push_back(temp);
+//         temp.clear();
+//     }
+// }
+
+// for (auto elements : output)
+// {
+//     for (auto element : elements)
+//     {
+//         cout << element << " ";
+//     }
+//     cout << endl;
+// }
+//     int size = arr.size();
+
+//     // Hash map to store groups of anagrams
+//     unordered_map<string, vector<string>> anagramGroups;
+
+//     // Group strings by their sorted version
+//     for (auto &str : arr)
+//     {
+//         string sortedStr = str;
+//         sort(sortedStr.begin(), sortedStr.end()); // Sort the string
+//         anagramGroups[sortedStr].push_back(str);  // Group by sorted version
+//     }
+
+//     // Extract the grouped anagrams
+//     vector<vector<string>> output;
+//     for (auto &group : anagramGroups)
+//     {
+//         output.push_back(group.second);
+//     }
+//     for (auto &group : output)
+//     {
+//         for (auto &word : group)
+//         {
+//             cout << word << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
 int main()
 {
-    vector<string> arr = {"listen", "silent", "enlist", "abc", "cab", "bac", "rat", "tar", "art"};
-    // int size = arr.size();
-
-    // vector<string> temp;
-    // vector<vector<string>> output;
-    // unordered_map<string, bool> myHash;
-
-    // for (auto element : arr)
-    // {
-    //     sort(element.begin(), element.end());
-    //     myHash[element] = false;
-    // }
-
-    // for (int i = 0; i < size; ++i)
-    // {
-    //     string first = arr[i];
-    //     sort(first.begin(), first.end());
-
-    //     // cout << first << " ";
-    //     if (!myHash[first])
-    //     {
-    //         temp.push_back(arr[i]);
-
-    //         for (int j = i + 1; j < size; ++j)
-    //         {
-    //             string second = arr[j];
-    //             sort(second.begin(), second.end());
-
-    //             if (first == second)
-    //             {
-    //                 temp.push_back(arr[j]);
-    //             }
-    //         }
-    //         myHash[first] = true;
-    //         output.push_back(temp);
-    //         temp.clear();
-    //     }
-    // }
-
-    // for (auto elements : output)
-    // {
-    //     for (auto element : elements)
-    //     {
-    //         cout << element << " ";
-    //     }
-    //     cout << endl;
-    // }
-    int size = arr.size();
-
-    // Hash map to store groups of anagrams
-    unordered_map<string, vector<string>> anagramGroups;
-
-    // Group strings by their sorted version
-    for (auto &str : arr)
-    {
-        string sortedStr = str;
-        sort(sortedStr.begin(), sortedStr.end()); // Sort the string
-        anagramGroups[sortedStr].push_back(str);  // Group by sorted version
-    }
-
-    // Extract the grouped anagrams
-    vector<vector<string>> output;
-    for (auto &group : anagramGroups)
-    {
-        output.push_back(group.second);
-    }
-    for (auto &group : output)
-    {
-        for (auto &word : group)
-        {
-            cout << word << " ";
-        }
-        cout << endl;
-    }
-
-    return 0;
+    string str = "01101011";
 }
