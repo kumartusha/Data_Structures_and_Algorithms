@@ -26,23 +26,59 @@ using namespace std;
 //     cout << minCount;
 // }
 
+// int main()
+// {
+//     // arr = [10, 2, -2, -20, 10], k = -10
+//     vector<int> arr = {10, 2, -2, -20, 10};
+//     int k = -10;
+//     int count = 0;
+//     int size = arr.size();
+
+//     for (int i = 0; i < size; ++i)
+//     {
+//         int sum = 0;
+//         for (int j = i; j < size; ++j)
+//         {
+//             sum += arr[j];
+//             if (sum == k)
+//                 ++count;
+//         }
+//         // cout << sum << " ";
+//     }
+// }
+
 int main()
 {
-    // arr = [10, 2, -2, -20, 10], k = -10
+    //     Input: arr = [10, 2, -2, -20, 10], k = -10
+    // Output: 3
+    // Explaination: Subarrays: arr[0...3], arr[1...4], arr[3...4] have sum exactly equal to -10.
     vector<int> arr = {10, 2, -2, -20, 10};
-    int k = -10;
-    int count = 0;
-    int size = arr.size();
+    int target = -10;
+    map<int, int> myMap;
 
-    for (int i = 0; i < size; ++i)
+    int currsum = 0;
+    int count = 0;
+
+    for (int i = 0; i < arr.size(); ++i)
     {
-        int sum = 0;
-        for (int j = i; j < size; ++j)
+        currsum += arr[i];
+
+        if (currsum == target)
         {
-            sum += arr[j];
-            if (sum == k)
-                ++count;
+            ++count;
         }
-        // cout << sum << " ";
+
+        //  else we move forward..
+        if (myMap.find(currsum - target) != myMap.end())
+        {
+            count += myMap[currsum - target];
+        }
+
+        //  if not found then we need to create the entry for the curr sum.
+        myMap[currsum]++;
     }
+
+    cout << count;
+
+    //  How to solve it..
 }
