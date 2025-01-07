@@ -31,3 +31,74 @@
 //     }
 //     return count;
 // }
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+int main()
+{
+
+    // int count = 0;
+    // int currSum = 0;
+    // unordered_map<int, int> myMap;
+
+    // for (int i = 0; i < size; ++i)
+    // {
+    //     currSum += arr[i];
+
+    //     if (currSum == target)
+    //     {
+    //         ++count;
+    //     }
+
+    //     if (myMap.find(currSum - target) != myMap.end())
+    //     {
+    //         count += myMap[currSum - target];
+    //     }
+
+    //     myMap[currSum]++;
+    // }
+    // cout << count;
+
+    // vector<int> arr = {-1, 1, 5, 5, 7};
+    // int target = 6;
+    // int size = arr.size();
+    // int start = 0;
+    // int end = size - 1;
+    // int count = 0;
+    // int maxCount = 0;
+
+    // while (start < end)
+    // {
+    //     int sum = arr[start] + arr[end];
+    //     if (sum == target)
+    //     {
+    //         ++count;
+    //         maxCount += count;
+    //         // --end;
+    //     }
+    //     else if (sum > target)
+    //     {
+    //         --end;
+    //     }
+    //     else
+    //     {
+    //         ++start;
+    //     }
+    // }
+    // cout << maxCount;
+
+    //     vector<string> words = {"mass", "as", "hero", "superhero"};
+
+    //     for (auto elements : words)
+    //     {
+    //         string str = elements;
+    //         for (auto element : words)
+    //         {
+
+    //         }
+    //     }
+}
