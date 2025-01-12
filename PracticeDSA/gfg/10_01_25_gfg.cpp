@@ -38,24 +38,67 @@ int main()
     //     cout << element << " ";
     // }
 
-    vector<int> arr = {3, 8, 2, 5, 7, 6, 12};
-    int k = 4;
+    // vector<int> arr = {3, 8, 2, 5, 7, 6, 12};
+    // int k = 4;
 
-    // for the sliding window technique we need to calculate the first window Sum.
-    int currSum = 0;
-    for (int i = 0; i < k; ++i)
+    // // for the sliding window technique we need to calculate the first window Sum.
+    // int currSum = 0;
+    // for (int i = 0; i < k; ++i)
+    // {
+    //     currSum += arr[i];
+    // }
+    // //  now we need to add the next element and remove the first element..
+    // int size = arr.size();
+    // int maxi = INT_MIN;
+
+    // for (int i = 1; i <= size - k; ++i)
+    // {
+    //     currSum = currSum - arr[i - 1] + arr[i + k - 1];
+    //     maxi = max(currSum, maxi);
+    // }
+
+    // cout << maxi;
+
+    //     Input: s = "geeksforgeeks"
+    // Output: 7
+    // Explanation: "eksforg" is the longest substring with all distinct characters.
+
+    // string str = "";
+    // int maxLength = INT_MIN;
+
+    // for (auto element : s)
+    // {
+    //     if (str.find(element) != string::npos)
+    //     {
+    //         cout << str << endl;
+    //     }
+    //     else
+    //     {
+    //         str.push_back(element);
+    //     }
+    // }
+
+    // cout << maxLength;
+
+    string s = "aaabaaa";
+    string str = "";
+    int maxLen = INT_MIN;
+    for (auto element : s)
     {
-        currSum += arr[i];
+        if (str.find(element) != string::npos)
+        {
+            int size = str.size();
+            if (size > maxLen)
+            {
+                maxLen = size;
+            }
+            str.clear();
+            str.push_back(element);
+        }
+        else
+        {
+            str.push_back(element);
+        }
     }
-    //  now we need to add the next element and remove the first element..
-    int size = arr.size();
-    int maxi = INT_MIN;
-
-    for (int i = 1; i <= size - k; ++i)
-    {
-        currSum = currSum - arr[i - 1] + arr[i + k - 1];
-        maxi = max(currSum, maxi);
-    }
-
-    cout << maxi;
+    cout << maxLen;
 }
