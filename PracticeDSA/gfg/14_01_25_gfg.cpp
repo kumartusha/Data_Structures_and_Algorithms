@@ -175,54 +175,95 @@ int main()
 
     // cout << ans;
 
-    int oneBit = 0;
-    int zeroBit = 0;
-    int num1 = 10;
-    int num2 = 10;
-    int demoNum2 = num2;
-    int ans = -1;
+    //     int oneBit = 0;
+    //     int zeroBit = 0;
+    //     int num1 = 10;
+    //     int num2 = 10;
+    //     int demoNum2 = num2;
+    //     int ans = -1;
 
-    while (num2)
+    //     while (num2)
+    //     {
+    //         int bit = num2 & 1;
+    //         if (bit == 1)
+    //         {
+    //             ++oneBit;
+    //         }
+    //         else if (bit == 0)
+    //         {
+    //             ++zeroBit;
+    //         }
+    //         num2 = num2 >> 1;
+    //     }
+    //     int minXor = INT_MAX;
+    //     // cout << oneBit << " " << zeroBit;
+
+    //     for (int i = 0; i < demoNum2; ++i)
+    //     {
+    //         int demoOneBit = 0;
+    //         int element = i;
+    //         while (element)
+    //         {
+    //             int demoBit = element & 1;
+    //             if (demoBit == 1)
+    //             {
+    //                 ++demoOneBit;
+    //             }
+    //             element = element >> 1;
+    //         }
+
+    //         if (demoOneBit == oneBit)
+    //         {
+    //             //  find the minimum XOR OPeration..
+    //             // minXor = min(i ^ num1, minXor);
+    //             int demo = i ^ num1;
+    //             if (minXor > demo)
+    //             {
+    //                 minXor = i ^ num1;
+    //                 ans = i;
+    //             }
+    //         }
+    //     }
+    //     cout << ans;
+    // }
+
+    vector<int> arr = {1, 0, 1, 1, 1, 0, 0};
+    int size = arr.size();
+
+    //  we need to return the length of the longest subarray which is zero.
+    //  we need to put the -1 where we have the 0.
+
+    map<int, int> myMap;
+    for (int i = 0; i < size; ++i)
     {
-        int bit = num2 & 1;
-        if (bit == 1)
+        if (!arr[i])
         {
-            ++oneBit;
+            arr[i] = -1;
         }
-        else if (bit == 0)
-        {
-            ++zeroBit;
-        }
-        num2 = num2 >> 1;
     }
-    int minXor = INT_MAX;
-    // cout << oneBit << " " << zeroBit;
 
-    for (int i = 0; i < demoNum2; ++i)
+    int currSum = 0;
+    int start = 0;
+    int end = 0;
+    for (int i = 0; i < size; ++i)
     {
-        int demoOneBit = 0;
-        int element = i;
-        while (element)
+        currSum += arr[i];
+        // if the currrSum is zero.
+        if (currSum == 0)
         {
-            int demoBit = element & 1;
-            if (demoBit == 1)
-            {
-                ++demoOneBit;
-            }
-            element = element >> 1;
+            start = 0;
+            end = i;
         }
 
-        if (demoOneBit == oneBit)
+        //  use the map entries...
+        if (myMap.find(currSum) != myMap.end())
         {
-            //  find the minimum XOR OPeration..
-            // minXor = min(i ^ num1, minXor);
-            int demo = i ^ num1;
-            if (minXor > demo)
-            {
-                minXor = i ^ num1;
-                ans = i;
-            }
+        }
+
+        //  mark the entry for the currSum.
+        if (myMap.find(currSum) == myMap.end())
+        {
+            myMap[currSum] = i;
         }
     }
-    cout << ans;
 }
