@@ -91,40 +91,75 @@ int main()
     //     cout << endl;
     // }
 
-    vector<vector<int>> matrix = {{1, 0, 1}, {0, 1, 1}, {0, 1, 0}, {1, 0, 0}};
-    int row = matrix.size();
-    int col = matrix[0].size();
+    // vector<vector<int>> matrix = {{1, 0, 1}, {0, 1, 1}, {0, 1, 0}, {1, 0, 0}};
+    // int row = matrix.size();
+    // int col = matrix[0].size();
 
-    vector<int> rowStore(row, 0);
-    vector<int> colStore(col, 0);
+    // vector<int> rowStore(row, 0);
+    // vector<int> colStore(col, 0);
 
-    for (int i = 0; i < row; ++i)
+    // for (int i = 0; i < row; ++i)
+    // {
+    //     for (int j = 0; j < col; ++j)
+    //     {
+    //         if (matrix[i][j])
+    //         {
+    //             rowStore[i]++;
+    //             colStore[j]++;
+    //         }
+    //     }
+    // }
+
+    // int count = 0;
+
+    // for (int i = 0; i < row; ++i)
+    // {
+    //     for (int j = 0; j < col; ++j)
+    //     {
+    //         if (matrix[i][j])
+    //         {
+    //             if (rowStore[i] > 1 || colStore[j] > 1)
+    //             {
+    //                 ++count;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // cout << count;
+    // unordered_map<Node *, bool> isVisited;
+
+    // //  we need to traverse the linked list and when we got the visited node twice then we simply says that loop is present.
+    // Node *temp = head;
+
+    // while (temp != NULL)
+    // {
+    //     if (isVisited[temp] == true)
+    //     {
+    //         //  means that if the node is visited twice times.
+    //         return true;
+    //     }
+    //     isVisited[temp] = true;
+    //     temp = temp->next;
+    // }
+    // return false;
+
+    //  we have given the integr into the inout we need to find the Character string.
+    int number = 5;
+
+    for (int i = 0; i < number; ++i)
     {
-        for (int j = 0; j < col; ++j)
+        for (int j = 0; j < number; ++j)
         {
-            if (matrix[i][j])
+            if (i >= j)
             {
-                rowStore[i]++;
-                colStore[j]++;
+                cout << " * ";
+            }
+            else
+            {
+                cout << " ";
             }
         }
+        cout << endl;
     }
-
-    int count = 0;
-
-    for (int i = 0; i < row; ++i)
-    {
-        for (int j = 0; j < col; ++j)
-        {
-            if (matrix[i][j])
-            {
-                if (rowStore[i] > 1 || colStore[j] > 1)
-                {
-                    ++count;
-                }
-            }
-        }
-    }
-
-    cout << count;
 }
