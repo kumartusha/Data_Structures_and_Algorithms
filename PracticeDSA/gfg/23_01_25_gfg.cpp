@@ -145,21 +145,69 @@ int main()
     // return false;
 
     //  we have given the integr into the inout we need to find the Character string.
-    int number = 5;
+    // int number = 5;
 
-    for (int i = 0; i < number; ++i)
+    // for (int i = 0; i < number; ++i)
+    // {
+    //     for (int j = 0; j < number; ++j)
+    //     {
+    //         if (i >= j)
+    //         {
+    //             cout << " * ";
+    //         }
+    //         else
+    //         {
+    //             cout << " ";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
+
+    // gfg 26 POTD
+    // Node *temp = head;
+    // unordered_map<Node *, bool> myMap;
+
+    // while (temp->next != NULL)
+    // {
+    //     if (myMap[temp->next] == true)
+    //     {
+    //         //  loop is found.
+    //         temp->next = NULL;
+    //         break;
+    //     }
+    //     myMap[temp] = true;
+    //     temp = temp->next;
+    // }
+
+    // int a = 5;
+    // int b = 7;
+    // int c = 4;
+    // int d = 9;
+
+    int a = 1;
+    int b = 1500;
+    int c = 2;
+    int d = 500;
+
+    // cout << a / b + c / d;
+    int deno = -1;
+    int denoMax = -1;
+    int denoMin = -1;
+    int nume = -1;
+    //  make the denominator..
+    if (b % d == 0 || d % b == 0)
     {
-        for (int j = 0; j < number; ++j)
-        {
-            if (i >= j)
-            {
-                cout << " * ";
-            }
-            else
-            {
-                cout << " ";
-            }
-        }
-        cout << endl;
+        // we have the same denominator number.
+        deno = max(b, d);
+        denoMin = min(b, d);
+        nume = (denoMax / denoMin) + max(a, c);
     }
+    else
+    {
+        deno = b * d;
+        nume = a * d + b * c;
+    }
+
+    cout << deno;
+    cout << nume;
 }
