@@ -65,115 +65,151 @@ using namespace std;
 //     merge(arr, start, end);
 // }
 
+// int main()
+// {
+//  Sorting algorithms.
+// vector<int> arr = {1, 100, 34, 67, 3, 2, 34, 454, 345, 67, 8, 87, 66, 54, 3, 456};
+// // int size = sizeof(arr) / sizeof(arr[0]);
+// int size = arr.size();
+
+// cout << "Before the sorting.";
+
+// for (int i = 0; i < size; ++i)
+// {
+//     cout << arr[i] << " ";
+// }
+// cout << endl;
+
+// // cout << size;
+// //  here we need to perform the merge Sort algorithms.
+// mergeSort(arr, 0, size - 1);
+
+// cout << "After the sorting.";
+
+// for (int i = 0; i < size; ++i)
+// {
+//     cout << arr[i] << " ";
+// }
+
+//  Print the pattern.
+// int row = 4;
+// int col = 7;
+
+// for (int i = 0; i < row; ++i)
+// {
+//     for (int j = 0; j < col; ++j)
+//     {
+//         if (i >= j)
+//         {
+//             cout << " * ";
+//         }
+//         else
+//         {
+//             cout << " ";
+//         }
+//     }
+//     cout << endl;
+// }
+
+//  we need to implement the bubble sort algorithms.
+
+// int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+// int size = sizeof(array) / sizeof(array[0]);
+
+// for (int i = 0; i < size; ++i)
+// {
+//     for (int j = i + 1; j < size; ++j)
+//     {
+//         if (array[i] > array[j])
+//         {
+//             swap(array[i], array[j]);
+//         }
+//     }
+// }
+
+// for (auto element : array)
+// {
+//     cout << element << " ";
+// }
+
+//  selection sort in the DSA.
+
+// int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+// int size = sizeof(array) / sizeof(array[0]);
+
+// for (int i = 0; i < size; ++i)
+// {
+//     int minIndex = i;
+//     for (int j = i + 1; j < size; ++j)
+//     {
+//         if (array[j] < array[minIndex])
+//         {
+//             minIndex = j;
+//         }
+//     }
+//     swap(array[i], array[minIndex]);
+// }
+
+// for (auto element : array)
+// {
+//     cout << element << " ";
+// }
+
+//  Insertion sort in the DSA..
+// int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+// int size = sizeof(array) / sizeof(array[0]);
+
+// for (int i = 1; i < size; ++i)
+// {
+//     int temp = array[i];
+//     int j = i - 1;
+
+//     while (j >= 0 && array[j] > temp)
+//     {
+//         array[j + 1] = array[j];
+//         j = j - 1;
+//     }
+//     array[j + 1] = temp;
+// }
+
+// for (auto element : array)
+// {
+//     cout << element << " ";
+// }
+
+// char ch = 'a';
+// int value = ch - 0;
+
+// cout << value;
+// }
+
+class First
+{
+
+public:
+    int id;
+    string name;
+    string course;
+
+    void func1()
+    {
+        cout << "The output Value is Output";
+    }
+};
+
+class Second : public First
+{
+public:
+    void func2()
+    {
+        cout << "Hello Bhai";
+    }
+};
 int main()
 {
-    //  Sorting algorithms.
-    // vector<int> arr = {1, 100, 34, 67, 3, 2, 34, 454, 345, 67, 8, 87, 66, 54, 3, 456};
-    // // int size = sizeof(arr) / sizeof(arr[0]);
-    // int size = arr.size();
-
-    // cout << "Before the sorting.";
-
-    // for (int i = 0; i < size; ++i)
-    // {
-    //     cout << arr[i] << " ";
-    // }
-    // cout << endl;
-
-    // // cout << size;
-    // //  here we need to perform the merge Sort algorithms.
-    // mergeSort(arr, 0, size - 1);
-
-    // cout << "After the sorting.";
-
-    // for (int i = 0; i < size; ++i)
-    // {
-    //     cout << arr[i] << " ";
-    // }
-
-    //  Print the pattern.
-    // int row = 4;
-    // int col = 7;
-
-    // for (int i = 0; i < row; ++i)
-    // {
-    //     for (int j = 0; j < col; ++j)
-    //     {
-    //         if (i >= j)
-    //         {
-    //             cout << " * ";
-    //         }
-    //         else
-    //         {
-    //             cout << " ";
-    //         }
-    //     }
-    //     cout << endl;
-    // }
-
-    //  we need to implement the bubble sort algorithms.
-
-    // int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    // int size = sizeof(array) / sizeof(array[0]);
-
-    // for (int i = 0; i < size; ++i)
-    // {
-    //     for (int j = i + 1; j < size; ++j)
-    //     {
-    //         if (array[i] > array[j])
-    //         {
-    //             swap(array[i], array[j]);
-    //         }
-    //     }
-    // }
-
-    // for (auto element : array)
-    // {
-    //     cout << element << " ";
-    // }
-
-    //  selection sort in the DSA.
-
-    // int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    // int size = sizeof(array) / sizeof(array[0]);
-
-    // for (int i = 0; i < size; ++i)
-    // {
-    //     int minIndex = i;
-    //     for (int j = i + 1; j < size; ++j)
-    //     {
-    //         if (array[j] < array[minIndex])
-    //         {
-    //             minIndex = j;
-    //         }
-    //     }
-    //     swap(array[i], array[minIndex]);
-    // }
-
-    // for (auto element : array)
-    // {
-    //     cout << element << " ";
-    // }
-
-    //  Insertion sort in the DSA..
-    // int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    // int size = sizeof(array) / sizeof(array[0]);
-
-    // for (int i = 1; i < size; ++i)
-    // {
-    //     int temp = array[i];
-    //     int j = i - 1;
-
-    //     while (j >= 0 && array[j] > temp)
-    //     {
-    //         array[j + 1] = array[j];
-    //         j = j - 1;
-    //     }
-    //     array[j + 1] = temp;
-    // }
-
-    // for (auto element : array)
-    // {
-    //     cout << element << " ";
-    // }
+    // First *obj = new First();
+    // obj->func1();
+    Second *obj = new Second();
+    obj->func2();
+    obj->func1();
 }
