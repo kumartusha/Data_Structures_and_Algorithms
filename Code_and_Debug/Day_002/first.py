@@ -117,3 +117,12 @@
 
 #     print(array)
 
+# will implemented the insertion sort using the Python.
+# def insertionSort(array):
+    #  Here the code of the insertion sort.
+
+
+# if __name__ == "__main__":
+#     array = [5,4,3,2,1]
+
+#     insertionSort(array)
