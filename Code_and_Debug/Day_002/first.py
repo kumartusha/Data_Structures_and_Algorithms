@@ -182,23 +182,117 @@
      # Here we need to implement the merge function that will be merge the two sub recursive arrays.
 
 
-def mergeSort(array, start, end):
-     if start >= end:
-          return
+# def mergeSort(array, start, end):
+#      if start >= end:
+#           return
      
-     # find the mid and call the merge sort for the left right nd then merge Function.
+#      # find the mid and call the merge sort for the left right nd then merge Function.
 
-     mid = start + (end - start) / 2
+#      mid = start + (end - start) / 2
 
-     mergeSort(array, start, mid)
-     mergeSort(array, mid + 1, end)
-    #  merge(array, start, end)
+#      mergeSort(array, start, mid)
+#      mergeSort(array, mid + 1, end)
+#     #  merge(array, start, end)
+
+# if __name__ == "__main__":
+#     array = [6,5,4,3,2,1]
+
+#     print("Before Sorting:- ", array)
+
+#     mergeSort(array, 0, len(array) - 1)
+
+#     print("After Sorting:- ", array)
+
+
+# We need to find the largest element into the array..
+# def findLargest(array1):
+    
+#     # First condition are
+#     # return max(array1)
+
+#     # Second condition are
+# #     array1.sort()
+# #     return array1[-1]
+
+#     # Third condition are:-
+#     largest_element = array1[0]
+
+#     for i in range(1, len(array1)):
+#         if array1[i] > largest_element:
+#             largest_element = array1[i]
+
+#     return largest_element
+
+# if __name__ == "__main__":
+    
+#     array1 = [5,4,3,2,1]
+
+#     largest = findLargest(array1)
+
+#     print("The largest number in the array are:- ", largest)
+
+# def findSecondLargest(array1):
+    
+#     # First Approach..
+# #     array1.sort()
+# #     return array1[-2]
+    
+#     # Second Approach.
+#     largest_element = array1[0]
+
+#     for i in range(1, len(array1)):
+#         if array1[i] > largest_element:
+#             largest_element = array1[i]
+
+     
+#     temp = -1
+#     for i in range(len(array1)):
+#         if array1[i] > temp and array1[i] < largest_element:
+#             temp = array1[i]
+
+#     return temp
+
+# if __name__ == "__main__":
+    
+#     array1 = [5,4,3,2,1]
+
+#     largest = findSecondLargest(array1)
+
+#     print("The largest number in the array are:- ", largest)
+
+
+# def findSecondLargest(array1):
+#     largest = float("-inf")
+#     second_largest = float("-inf")
+
+
+#     for i in range(len(array1)):
+#         if array1[i] > largest:
+#             largest = array1[i]
+#         if array1[i] > second_largest and second_largest != largest:
+#                 second_largest = array1[i]
+    
+#     return second_largest
+    
+
+# def finSortedOrNot(array1):
+#     # First Approach..
+#     for i in range(len(array1) - 1):
+#         if array1[i + 1] < array1[i]:
+#             return False
+#     return True
+
+def removeDuplicate(array1):
+    
+    
 
 if __name__ == "__main__":
-    array = [6,5,4,3,2,1]
+    
+    array1 = [1,1,1,2,3,4,4,7,9,9,9,10]
 
-    print("Before Sorting:- ", array)
+# largest = findSecondLargest(array1)
+    removeDuplicate(array1)
 
-    mergeSort(array, 0, len(array) - 1)
+    print(array1)
 
-    print("After Sorting:- ", array)
+# print("The largest number in the array are:- ", largest)
