@@ -282,17 +282,93 @@
 #             return False
 #     return True
 
-def removeDuplicate(array1):
+# def removeDuplicate(array1):
     
     
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     
-    array1 = [1,1,1,2,3,4,4,7,9,9,9,10]
+#     array1 = [1,1,1,2,3,4,4,7,9,9,9,10]
 
-# largest = findSecondLargest(array1)
-    removeDuplicate(array1)
+# # largest = findSecondLargest(array1)
+#     removeDuplicate(array1)
 
-    print(array1)
+#     print(array1)
 
 # print("The largest number in the array are:- ", largest)
+
+
+# def rightRotateByOne(array1):
+
+#     # Using the First Approach..
+#     # array1 = [array1[-1]] + array1[0:len(array1) - 1]
+
+#     # Using the Second Approach.
+#     temp = array1[-1]
+
+#     for i in range(len(array1) - 2, -1, -1):
+#         array1[i + 1] = array1[i]
+    
+#     array1[0] = temp
+
+# if __name__ == "__main__":
+#     array1 = [1,1,1,2,3,4,4,7,9,9,9,10]
+#     # largest = findSecondLargest(array1)
+#     rightRotateByOne(array1)
+
+#     print(array1)
+
+# def rightRotateByK(array1,key):
+
+#     tempArr = [0] * 5
+#     for i in range(len(array1)):
+#         tempArr[(i + key) % len(array1)] = array1[i]
+    
+
+#     print(tempArr)
+
+# if __name__ == "__main__":
+#     array1 = [5,4,3,2,1]
+#     k=5
+#     rightRotateByK(array1,k)
+
+# we need to implement the move zeroes to the end question.
+
+# def moveZeroesToEnd(array):
+
+#     # [1,2,4,3,3,5,1,0,0,0]
+
+#     zero = 0
+
+#     for i in range(len(array)):
+#         if array[i]:
+#             array[i], array[zero] = array[zero], array[i]
+#             zero += 1
+
+
+# def linearSearch(array, key):
+#     for i in range(len(array)):
+#         if array[i] == key:
+#             return 1
+        
+#     return 0
+
+def mergeTwoSortedArray(array1, array2):
+
+    i = 0
+    j = 0
+    temp = []
+
+    while i < len(array1) and j < len(array2):
+        if array1[i] < array2[j]:
+            temp.append(array1[i])
+            i += 1
+        if array2[i] < array1[i]:
+            temp.append(array2[j])
+            j += 1
+
+if __name__ == "__main__":
+    array1 = [1,2,3,4,5,5,6,6]
+    array2 = [2,4,5,6,7,8]
+
+    mergeTwoSortedArray(array1, array2)
