@@ -353,22 +353,25 @@
         
 #     return 0
 
-def mergeTwoSortedArray(array1, array2):
+def mergeTwoSortedArray(array1, m, array2, n):
 
     i = 0
     j = 0
-    temp = []
+    temp = [0] * (m + n)
 
-    while i < len(array1) and j < len(array2):
-        if array1[i] < array2[j]:
-            temp.append(array1[i])
+    while i < m and j < n:
+        if array1[i] == array2[j]:
             i += 1
-        if array2[i] < array1[i]:
-            temp.append(array2[j])
             j += 1
 
-if __name__ == "__main__":
-    array1 = [1,2,3,4,5,5,6,6]
-    array2 = [2,4,5,6,7,8]
 
-    mergeTwoSortedArray(array1, array2)
+
+
+
+if __name__ == "__main__":
+    array1 = [1,1,1,2,4,6,7]
+    m = len(array1)
+    array2 = [1,2,3,6,7,8,9,10]
+    n = len(array2)
+
+    mergeTwoSortedArray(array1,m, array2,n)
